@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/auth.dart';
 import 'package:kakao_flutter_sdk/link.dart';
 import 'package:kakao_flutter_sdk/user.dart';
+import 'package:social_login_test/facebook_login_button.dart';
 import 'package:social_login_test/kakao_login_button.dart';
 
 void main() {
@@ -47,24 +48,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(
                 width: deviceSize.width * 0.9,
-                child: RaisedButton(
-                  onPressed: () => {},
-                  color: Colors.blueAccent,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/img/facebook_logo.png',
-                        width: deviceSize.width * 0.1,
-                      ),
-                      SizedBox(
-                        width: deviceSize.width * 0.1,
-                      ),
-                      Text('Facebook Login'),
-                    ],
-                  ),
-                ),
+                child: FacebookLoginButton(),
               ),
             ],
           ),

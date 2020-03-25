@@ -10,20 +10,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String id = 'null';
-  @override
-  void initState() {
-    _getUserId();
-    super.initState();
-  }
-
-  _getUserId() async {
-    User user = await UserApi.instance.me();
-    setState(() {
-      id = user.kakaoAccount.profile.toJson()['nickname'].toString();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +18,7 @@ class _LoginState extends State<Login> {
       ),
       body: Container(
         child: Center(
-          child: Text(id),
+          child: Text(widget.username),
         ),
       ),
     );
